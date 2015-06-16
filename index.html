@@ -6,7 +6,13 @@
 
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/github-dark.css" media="screen">
-	
+    <link type="text/css" rel="stylesheet" href="css/ui.css">
+    <script type="text/javascript" src="js/crypto/blake2s.js"></script>
+        <script type="text/javascript" src="js/crypto/nacl.js"></script>
+        <script type="text/javascript" src="js/crypto/scrypt.js"></script>
+        <script type="text/javascript" src="js/crypto/base58.js"></script>
+        <script type="text/javascript" src="js/coax.js"></script>
+        <script type="text/javascript" src="js/ui.js"></script>
     <title>0x.nu by sinecure</title>
   </head>
 
@@ -23,39 +29,163 @@
           <a href="https://github.com/sinecure/0x.nu" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
         </section>
       </div>
+      
+
     </header>
+
+      <div class="panel" id="panel-register">
+        <h2>Register</h2>
+        <div class="content">
+          <input type="email" id="input-register-user" placeholder="email" class="button"/>
+          <input type="password" id="input-register-pass" placeholder="password"/>
+        </div>
+        <div class="commit">
+          <button id="button-register" class="btn">register</button>
+        </div>
+      </div>
+      
+      <div class="panel" id="panel-login">
+                <div class="header">login</div>
+                <div class="content">
+                    <label for="input-login-user">email:</label><input type="email" id="input-login-user"/><br/>
+                    <label for="input-login-pass">password:</label><input type="password" id="input-login-pass"/>
+                </div>
+                <div class="commit">
+                    <button id="button-login">login</button>
+                </div>
+            </div>
+        
+            <div class="panel" id="panel-progress">
+                <div class="header"></div>
+                <div class="content">generating keys...</div>
+                <div class="commit"></div>
+            </div>
+            
+            <div class="panel" id="panel-register">
+                <div class="header">register</div>
+                <div class="content">
+                    <label for="input-register-user">email</label><input type="email" id="input-register-user"/><br/>
+                    <label for="input-register-pass">password</label><input type="password" id="input-register-pass"/>
+                </div>
+                <div class="commit">
+                    <button id="button-register">register</button>
+                </div>
+            </div>
+            
+            <div class="panel" id="panel-registered">
+                <div class="header">registered</div>
+                <div class="content">
+                    you are now registered<br/>
+                    <br/>
+                    <button id="button-reset-code-show">show reset code</button>
+                    <div class="panel" id="panel-reset-code-show">
+                        <input type="text" id="input-registered-reset"/>
+                    </div>
+                    <div class="notice">
+                        <b>IMPORTANT!</b> if you forget your password and do not 
+                        have the reset code, you identity is <b>forever lost</b>. in 
+                        the event that you lose your password, the password can be 
+                        reset using the reset code. this code can <b>only</b> be used 
+                        in the current browser, on this particular computer. if you 
+                        think that you may forget your password, store this code in a 
+                        secure offline location, such as a safe, or bank vault. do 
+                        <b>not</b> store it online, in a file on your computer, near 
+                        your computer, or even memorize it. better yet, forget you 
+                        ever saw this code and <b>remember your password</b> instead! 
+                    </div>
+                </div>
+                <div class="commit"></div>
+            </div>
+            
+            <div class="panel" id="panel-loggedin">
+                <div class="header">logged in</div>
+                <div class="content">your id: <div class="dynamic" id="panel-loggedin-id"></div></div>
+                <div class="commit">
+                </div>
+            </div>
+        
+            <div class="panel" id="panel-authorize">
+                <div class="header">authorize</div>
+                <div class="content">
+                    the website <div class="dynamic" id="panel-referrer"></div> is requesting authorization
+                </div>
+                <div class="commit">
+                    <button id="button-authorize">approve</button> <button id="button-reject">reject</button>
+                </div>
+            </div>
+            
+            <div class="settings" id="settings">
+                <div class="commit">
+                    <button id="button-export-show">export profile</button>
+                    <button id="button-reset-show">reset password</button>
+                    <button id="button-import-show">import profile</button>
+                    <button id="button-logout">logout</button>
+                </div>
+                <div class="content" id="panel-id"></div>
+            </div>
+            
+            <div class="panel" id="panel-reset">
+                <div class="header">reset</div>
+                <div class="content">
+                    enter reset code:<br/>
+                    <label for="input-reset-code">reset code</label><input type="text" id="input-reset-code"/><br/>
+                    <label for="input-reset-user">email</label><input type="email" id="input-reset-user"/><br/>
+                    <label for="input-reset-pass">password</label><input type="password" id="input-reset-pass"/>
+                </div>
+                <div class="commit">
+                    <button id="button-reset">reset</button>
+                </div>
+            </div>
+            
+            <div class="panel" id="panel-export">
+                <div class="header">export</div>
+                <div class="content">
+                    exporting your profile allows you to transfer it to another 
+                    browser using the import feature.
+                    <label for="input-export-code">profile</label><input type="text" id="input-export-code"/>
+                </div>
+                <div class="commit">
+                    <button id="button-back">back</button>
+                </div>
+            </div>
+            
+            <div class="panel" id="panel-import">
+                <div class="header">import</div>
+                <div class="content">
+                    <label for="input-import-code">profile</label><input type="text" id="input-import-code"/>
+                </div>
+                <div class="commit">
+                    <button id="button-import">import profile</button>
+                </div>
+            </div>
 
     <div class="container">
       <section id="main_content">
-        <h1>
-<a id="0xnu" class="anchor" href="#0xnu" aria-hidden="true"><span class="octicon octicon-link"></span></a>0x.nu</h1>
+        <h1>0x.nu</h1>
 
 <p>0x.nu zero exchange client-side authentication service</p>
 
-<h1>
-<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h1>
+<h1>Features</h1>
 
 <ul>
 <li>Offline authentication</li>
 <li>Single sign-on</li>
 <li>Password reset</li>
-<li>
-</li>
+<li>DDOS resistant</li>
+<li>Bruteforce resistant</li>
+<li>Phishing resistant</li>
 </ul>
 
-<h1>
-<a id="technology" class="anchor" href="#technology" aria-hidden="true"><span class="octicon octicon-link"></span></a>Technology</h1>
+<h1>Technology</h1>
 
 <ul>
 <li>NaCL</li>
 <li>Service workers</li>
 </ul>
 
-<h2>
-<a id="nacl" class="anchor" href="#nacl" aria-hidden="true"><span class="octicon octicon-link"></span></a>NaCL</h2>
+<h2>NaCL</h2>
 
-<h2>
-<a id="service-workers" class="anchor" href="#service-workers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Service workers</h2>
+<h2>Service workers</h2>
       </section>
     </div>
 
