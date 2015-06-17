@@ -6,13 +6,13 @@
 
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/github-dark.css" media="screen">
-    <link type="text/css" rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" type="text/css" href="css/ui.css" media="screen">
     <script type="text/javascript" src="js/crypto/blake2s.js"></script>
-        <script type="text/javascript" src="js/crypto/nacl.js"></script>
-        <script type="text/javascript" src="js/crypto/scrypt.js"></script>
-        <script type="text/javascript" src="js/crypto/base58.js"></script>
-        <script type="text/javascript" src="js/coax.js"></script>
-        <script type="text/javascript" src="js/ui.js"></script>
+    <script type="text/javascript" src="js/crypto/nacl.js"></script>
+    <script type="text/javascript" src="js/crypto/scrypt.js"></script>
+    <script type="text/javascript" src="js/crypto/base58.js"></script>
+    <script type="text/javascript" src="js/coax.js"></script>
+    <script type="text/javascript" src="js/ui.js"></script>
     <title>0x.nu by sinecure</title>
   </head>
 
@@ -33,51 +33,51 @@
 
     </header>
 
-      <div class="panel" id="panel-register">
+      <div class="panel container" id="panel-register">
         <h2>Register</h2>
         <div class="content">
           <input type="email" id="input-register-user" placeholder="email" class="button"/>
           <input type="password" id="input-register-pass" placeholder="password"/>
         </div>
         <div class="commit">
-          <button id="button-register" class="btn">register</button>
+          <button class="btn" id="button-register">register</button>
         </div>
       </div>
       
-      <div class="panel" id="panel-login">
+      <div class="panel container" id="panel-login">
                 <div class="header">login</div>
                 <div class="content">
                     <label for="input-login-user">email:</label><input type="email" id="input-login-user"/><br/>
                     <label for="input-login-pass">password:</label><input type="password" id="input-login-pass"/>
                 </div>
                 <div class="commit">
-                    <button id="button-login">login</button>
+                    <button class="btn" id="button-login">login</button>
                 </div>
             </div>
         
-            <div class="panel" id="panel-progress">
+            <div class="panel container" id="panel-progress">
                 <div class="header"></div>
                 <div class="content">generating keys...</div>
                 <div class="commit"></div>
             </div>
             
-            <div class="panel" id="panel-register">
+            <div class="panel container" id="panel-register">
                 <div class="header">register</div>
                 <div class="content">
                     <label for="input-register-user">email</label><input type="email" id="input-register-user"/><br/>
                     <label for="input-register-pass">password</label><input type="password" id="input-register-pass"/>
                 </div>
                 <div class="commit">
-                    <button id="button-register">register</button>
+                    <button class="btn" id="button-register">register</button>
                 </div>
             </div>
             
-            <div class="panel" id="panel-registered">
+            <div class="panel container" id="panel-registered">
                 <div class="header">registered</div>
                 <div class="content">
                     you are now registered<br/>
                     <br/>
-                    <button id="button-reset-code-show">show reset code</button>
+                    <button class="btn" id="button-reset-code-show">show reset code</button>
                     <div class="panel" id="panel-reset-code-show">
                         <input type="text" id="input-registered-reset"/>
                     </div>
@@ -97,34 +97,34 @@
                 <div class="commit"></div>
             </div>
             
-            <div class="panel" id="panel-loggedin">
+            <div class="panel container" id="panel-loggedin">
                 <div class="header">logged in</div>
                 <div class="content">your id: <div class="dynamic" id="panel-loggedin-id"></div></div>
                 <div class="commit">
                 </div>
             </div>
         
-            <div class="panel" id="panel-authorize">
+            <div class="panel container" id="panel-authorize">
                 <div class="header">authorize</div>
                 <div class="content">
                     the website <div class="dynamic" id="panel-referrer"></div> is requesting authorization
                 </div>
                 <div class="commit">
-                    <button id="button-authorize">approve</button> <button id="button-reject">reject</button>
+                    <button class="btn" id="button-authorize">approve</button> <button class="btn" id="button-reject">reject</button>
                 </div>
             </div>
             
             <div class="settings" id="settings">
                 <div class="commit">
-                    <button id="button-export-show">export profile</button>
-                    <button id="button-reset-show">reset password</button>
-                    <button id="button-import-show">import profile</button>
-                    <button id="button-logout">logout</button>
+                    <button class="btn" id="button-export-show">export profile</button>
+                    <button class="btn" id="button-reset-show">reset password</button>
+                    <button class="btn" id="button-import-show">import profile</button>
+                    <button class="btn" id="button-logout">logout</button>
                 </div>
                 <div class="content" id="panel-id"></div>
             </div>
             
-            <div class="panel" id="panel-reset">
+            <div class="panel container" id="panel-reset">
                 <div class="header">reset</div>
                 <div class="content">
                     enter reset code:<br/>
@@ -133,11 +133,11 @@
                     <label for="input-reset-pass">password</label><input type="password" id="input-reset-pass"/>
                 </div>
                 <div class="commit">
-                    <button id="button-reset">reset</button>
+                    <button class="btn" id="button-reset">reset</button>
                 </div>
             </div>
             
-            <div class="panel" id="panel-export">
+            <div class="panel container" id="panel-export">
                 <div class="header">export</div>
                 <div class="content">
                     exporting your profile allows you to transfer it to another 
@@ -145,17 +145,17 @@
                     <label for="input-export-code">profile</label><input type="text" id="input-export-code"/>
                 </div>
                 <div class="commit">
-                    <button id="button-back">back</button>
+                    <button class="btn" id="button-back">back</button>
                 </div>
             </div>
             
-            <div class="panel" id="panel-import">
+            <div class="panel container" id="panel-import">
                 <div class="header">import</div>
                 <div class="content">
                     <label for="input-import-code">profile</label><input type="text" id="input-import-code"/>
                 </div>
                 <div class="commit">
-                    <button id="button-import">import profile</button>
+                    <button class="btn" id="button-import">import profile</button>
                 </div>
             </div>
 
