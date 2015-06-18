@@ -6,12 +6,12 @@
 * Offline authentication
 * Single sign-on
 * Password reset
-* 
+
 
 # Technology
-* NaCL
+* NaCl
 * Service workers
 
-## NaCL
+## NaCl
 
 ## Service workers
