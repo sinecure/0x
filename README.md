@@ -1,5 +1,5 @@
-# 0x.nu
-0x.nu zero exchange client-side authentication service
+# b9
+b9.nu zero exchange client-side authentication service
 
 
 # Features
